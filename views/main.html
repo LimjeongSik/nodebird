@@ -65,6 +65,10 @@
             axios
                 .post("/post/img", formData)
                 .then((res) => {
+                    console.log(
+                        (document.getElementById("img-preview").src =
+                            res.data.url)
+                    );
                     document.getElementById("img-url").value = res.data.url;
                     document.getElementById("img-preview").src = res.data.url;
                     document.getElementById("img-preview").style.display =
